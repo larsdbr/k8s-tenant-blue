@@ -1,0 +1,19 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: podinfo-rule
+  namespace: blue-apps
+spec:
+  hosts:
+  - "*"
+  gateways:
+  - isto-system/public-gateway
+  http:
+  - match:
+    - uri:
+        prefix: /
+    route:
+    - destination:
+        port:
+          number: 9898
+        host: podinfo
