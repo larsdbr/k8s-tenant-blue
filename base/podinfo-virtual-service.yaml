@@ -5,7 +5,7 @@ metadata:
   namespace: blue-apps
 spec:
   hosts:
-  - "*"
+  - "blue.example.com"
   gateways:
   - istio-system/public-gateway
   http:
